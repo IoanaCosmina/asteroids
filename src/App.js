@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Today from './Today/Today'
-import History from './History/History'
+import Today from './Today/Today';
+import History from './History/History';
 
 class App extends Component {
   render() {
@@ -15,7 +14,7 @@ class App extends Component {
                 <span className="navbar-item">AsteroidAlert</span>
               </div>
               <div className="navbar-end">
-                <a className="navbar-item" href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">Powered by NASA</a>
+                <a className="navbar-item" href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">Powered by NASA Open APIs</a>
               </div>
             </nav>
           </header>
@@ -26,7 +25,7 @@ class App extends Component {
           </div>
           <div className="results--section__inner">
             <Today />
-            <History />
+            {/* <History /> */}
           </div>
         </section>
       </div>
