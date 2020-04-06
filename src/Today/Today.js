@@ -29,7 +29,7 @@ class Today extends Component {
     render() {
         return (
             <div>
-                <h1 className="title is-spaced">Today</h1>
+                <h1 className="title is-spaced">Today - {Utils.getCurrentDate("string")}</h1>
                 <h2 className="subtitle">{this.state.asteroids.length} Asteroids</h2>
                 <div className="container today--container">
                     {
