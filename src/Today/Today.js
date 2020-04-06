@@ -28,10 +28,11 @@ class Today extends Component {
 
     render() {
         return (
-            <div className="today--section container">
-                <h2>Today's Asteroids</h2>
-                <div className="today--section__box">
-                    {                   
+            <div>
+                <h1 className="title is-spaced">Today</h1>
+                <h2 className="subtitle">{this.state.asteroids.length} Asteroids</h2>
+                <div className="container today--container">
+                    {
                         this.state.asteroids.map(asteroid => (
                             <Asteroid key={asteroid.name} asteroid={asteroid} />
                         ))

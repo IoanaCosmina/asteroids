@@ -20,12 +20,12 @@ class App extends Component {
           </header>
         </div>
         <section className="results--section">
-          <div className="container">
-            <h1>AsteroidAlert provides realtime information about near Earth asteroids</h1>
-          </div>
           <div className="results--section__inner">
             <Today />
             {/* <History /> */}
+          </div>
+          <div className="container">
+            <h1>AsteroidAlert provides realtime information about near Earth asteroids</h1>
           </div>
         </section>
       </div>
