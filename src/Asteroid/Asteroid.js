@@ -1,6 +1,12 @@
 import React from 'react';
 import './Asteroid.css';
 import ast1 from '../images/asteroid/1.jpg';
+import ast2 from '../images/asteroid/2.jpg';
+import ast3 from '../images/asteroid/3.jpg';
+import ast4 from '../images/asteroid/4.jpg';
+import ast5 from '../images/asteroid/5.jpg';
+
+const imgArray = [ast1, ast2, ast3, ast4, ast5];
 
 const Asteroid = ({ asteroid }) => {
     if (!asteroid) return null;
@@ -18,12 +24,15 @@ const Asteroid = ({ asteroid }) => {
     const diameter_min = isMetric ? estimated_diameter.meters.estimated_diameter_min : estimated_diameter.feet.estimated_diameter_min;
     const diameter_max = isMetric ? estimated_diameter.meters.estimated_diameter_max : estimated_diameter.feet.estimated_diameter_max;
 
+    const getRandomNumber = (max=5) => {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
     return (
         <div className="card section">
             <div className="card-image">
                 <figure className="image is-4by3">
-                    {/* TO DO -- Write a function to randomize images */}
-                    <img src={ast1} alt="asteroid"></img>
+                    <img src={imgArray[getRandomNumber()]} alt="asteroid"></img>
                 </figure>
             </div>
             <div className="card-content">
