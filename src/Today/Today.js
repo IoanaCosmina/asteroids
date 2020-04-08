@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Today.css';
 import axios from 'axios';
-import * as Utils from '../utils.js';
+import moment from 'moment';
 import * as Constants from '../constants.js';
 import Asteroid from '../Asteroid/Asteroid';
 import Pagination from '../Pagination/Pagination';
@@ -13,7 +13,7 @@ class Today extends Component {
     }
 
     componentDidMount() {
-        let current_date = Utils.getCurrentDate();
+        let current_date = moment().format('YYYY-MM-DD');
         axios.get(`${Constants.API_URL}/feed?start_date=${current_date}&end_date=${current_date}&api_key=${Constants.API_KEY}`)
             .then(response => {
                 const asteroidObj = response.data.near_earth_objects;
@@ -45,7 +45,7 @@ class Today extends Component {
 
         return (
             <div>
-                <h1 className="title is-spaced">Today - {Utils.getCurrentDate("string")}</h1>
+                <h1 className="title is-spaced">Today - {moment().format('MMMM Do, YYYY')}</h1>
                 <h2 className="subtitle">{totalAsteroids} Asteroids</h2>
                 <div className="">
                     <Pagination

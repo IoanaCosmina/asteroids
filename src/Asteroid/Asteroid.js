@@ -33,7 +33,6 @@ const Asteroid = ({ asteroid }) => {
                         <article className={isHazardous ? "message is-warning" : "message is-success"}>
                             <div className="message-body">
                                 <p>Potentially Hazardous? {isHazardous ? "Yes" : "No"}</p>
-                                
                             </div>
                         </article>
                     </div>
