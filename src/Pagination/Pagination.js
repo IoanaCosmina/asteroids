@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
+import './Pagination.css';
 
 const LEFT_PAGE = "LEFT";
 const RIGHT_PAGE = "RIGHT";
@@ -129,40 +130,36 @@ class Pagination extends Component {
                             if (page === LEFT_PAGE)
                                 return (
                                     <li key={index}>
-                                        <a
+                                        <button
                                             className="pagination-link pagination-previous"
-                                            href="#"
                                             aria-label="Previous"
                                             onClick={this.handleMoveLeft}
                                         >
                                             <span className="sr-only">Previous</span>
-                                        </a>
+                                        </button>
                                     </li>
                                 );
 
                             if (page === RIGHT_PAGE)
                                 return (
                                     <li key={index}>
-                                        <a
+                                        <button
                                             className="pagination-link pagination-next"
-                                            href="#"
                                             aria-label="Next"
                                             onClick={this.handleMoveRight}
                                         >
                                             <span className="sr-only">Next</span>
-                                        </a>
+                                        </button>
                                     </li>
                                 );
 
                             return (
                                 <li key={index}>
-                                    <a
+                                    <button
                                         className={`pagination-link ${currentPage === page ? " is-current" : ""}`}
-                                        href="#"
-                                        onClick={e => this.handleClick(page, e)}
-                                    >
+                                        onClick={e => this.handleClick(page, e)}>
                                         {page}
-                                    </a>
+                                    </button>
                                 </li>
                             );
                         })}
