@@ -22,12 +22,18 @@ class App extends Component {
         <section className="results--section">
           <div className="results--section__inner">
             <Today />
-            {/* <History /> */}
-          </div>
-          <div className="container">
-            <h1>AsteroidAlert provides realtime information about near Earth asteroids</h1>
+            <History />
           </div>
         </section>
+        <footer className="footer">
+          <div className="content has-text-centered">
+            <p>
+              AsteroidAlert provides realtime information about near Earth asteroids,
+              <br></br>
+              based on information retrieved from the <a href="https://api.nasa.gov/">NeoWs (Near Earth Object Web Service) API</a>.
+            </p>
+          </div>
+        </footer>
       </div>
     );
   }

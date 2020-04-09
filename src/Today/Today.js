@@ -57,8 +57,7 @@ class Today extends Component {
                 </div>
                 <div className="container today--container">
                     {currentAsteroids.map(asteroid => (
-                        // Replace name with ID inside key
-                        <Asteroid key={asteroid.name} asteroid={asteroid} />
+                        <Asteroid key={asteroid.id} asteroid={asteroid} />
                     ))}
                 </div>
             </div>
