@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Today from './Today/Today';
-import History from './History/History';
+import Today from './components/Today';
+import History from './components/History';
 
 class App extends Component {
   render() {

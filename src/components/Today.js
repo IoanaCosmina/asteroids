@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './Today.css';
+import '../assets/css/Today.css';
 import axios from 'axios';
 import moment from 'moment';
 import * as Constants from '../constants.js';
-import Asteroid from '../Asteroid/Asteroid';
-import Pagination from '../Pagination/Pagination';
+import Asteroid from '../components/Asteroid';
+import Pagination from '../components/Pagination';
 
 class Today extends Component {
     constructor() {

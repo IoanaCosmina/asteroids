@@ -1,10 +1,10 @@
 import React from 'react';
-import './Asteroid.css';
-import ast1 from '../images/asteroid/1.jpg';
-import ast2 from '../images/asteroid/2.jpg';
-import ast3 from '../images/asteroid/3.jpg';
-import ast4 from '../images/asteroid/4.jpg';
-import ast5 from '../images/asteroid/5.jpg';
+import '../assets/css/Asteroid.css';
+import ast1 from '../assets/images/asteroid/1.jpg';
+import ast2 from '../assets/images/asteroid/2.jpg';
+import ast3 from '../assets/images/asteroid/3.jpg';
+import ast4 from '../assets/images/asteroid/4.jpg';
+import ast5 from '../assets/images/asteroid/5.jpg';
 
 const imgArray = [ast1, ast2, ast3, ast4, ast5];
 
