@@ -7,34 +7,34 @@ const HistoryCard = props => {
 
     return (
         <React.Fragment>
-            <div className="message is-dark">
-                <div className="message-header">
-                    <p className="">{date}</p>
-                </div>
-                <div className="message-body">
-                    <div className="field">
-                        <label className="label ">Total:</label>
-                        <span>{count} asteroids</span>
-                    </div>
+            <div className="card">
+                <header className="card-header">
+                    <p className="card-header-title">
+                        {date}
+                    </p>
+                </header>
+                <div className="card-content">
                     <div className="content">
+                        <div className="field">
+                            <label className="label is-small">Total:</label>
+                            <span>{count} asteroids</span>
+                        </div>
                         <p>List of potentially hazardous asteroids:</p>
-                        <ul>
+                        <ul className="fa-ul">
                             {
                                 allAsteroids.filter(asteroid => asteroid.is_potentially_hazardous_asteroid).map(filteredAsteroid => (
                                     <li key={filteredAsteroid.id}>
-                                        {filteredAsteroid.name}
+                                        <i className="fa-li fa fa-exclamation"></i>
+                                        <span>{filteredAsteroid.name}</span>
                                     </li>
                                 ))
                             }
                         </ul>
-
                     </div>
                 </div>
             </div>
         </React.Fragment>
-
     )
-
 }
 
 export default HistoryCard;

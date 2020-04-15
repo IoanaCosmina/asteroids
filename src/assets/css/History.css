@@ -16,8 +16,3 @@
         grid-template-columns: 1fr;
     }
 }
-
-.container.history--container>div {
-    border: 1px solid #4a4a4a;
-    border-radius: 3px;
-}
