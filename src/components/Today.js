@@ -7,10 +7,7 @@ import Asteroid from '../components/Asteroid';
 import Pagination from '../components/Pagination';
 
 class Today extends Component {
-    constructor() {
-        super();
-        this.state = { allAsteroids: [], currentAsteroids: [], currentPage: null, totalPages: null };
-    }
+    state = { allAsteroids: [], currentAsteroids: [], currentPage: null, totalPages: null };
 
     componentDidMount() {
         let current_date = moment().format('YYYY-MM-DD');

@@ -20,10 +20,8 @@ class App extends Component {
           </header>
         </div>
         <section className="results--section">
-          <div className="results--section__inner">
-            <Today />
-            <History />
-          </div>
+          <Today />
+          <History />
         </section>
         <footer className="footer">
           <div className="content has-text-centered">
