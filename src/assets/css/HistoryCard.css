@@ -1,0 +1,9 @@
+.history--container .message-header, 
+.history--container .message-body {
+    border: none;
+    border-radius: 0;
+}
+
+.history--container .message:not(:last-child) {
+    margin-bottom: 0;
+}
