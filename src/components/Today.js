@@ -18,7 +18,7 @@ class Today extends Component {
             .then(response => {
                 const asteroidObj = response.data.near_earth_objects;
                 this.setState({ allAsteroids: asteroidObj[Object.keys(asteroidObj)[0]] });
-                localStorage.setItem('allAsteroids', asteroidObj[Object.keys(asteroidObj)[0]]);
+                localStorage.setItem('allAsteroids', JSON.stringify(asteroidObj[Object.keys(asteroidObj)[0]]));
             })
             .catch(error => {
                 console.log(error);
@@ -33,16 +33,24 @@ class Today extends Component {
         const currentAsteroids = allAsteroids.slice(offset, offset + pageLimit);
 
         this.setState({ currentPage, currentAsteroids, totalPages });
+        localStorage.setItem('currentAsteroids', JSON.stringify(currentAsteroids));
     }
 
     render() {
+        if (!navigator.onLine) {
+            this.setState({
+                allAsteroids: localStorage.getItem('allAsteroids'),
+                currentAsteroids: localStorage.getItem('currentAsteroids')
+            });
+        }
+
         const {
             allAsteroids,
             currentAsteroids
         } = this.state;
         const totalAsteroids = allAsteroids.length;
 
-        if (totalAsteroids === 0) return null;
+        if (totalAsteroids === 0 || !currentAsteroids) return null;
 
         return (
             <div>
