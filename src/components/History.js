@@ -21,7 +21,8 @@ class History extends Component {
                     date: moment().subtract(1, 'days').format("MMMM Do, YYYY"),
                     allAsteroids: asteroidObj[Object.keys(asteroidObj)[0]],
                     count: asteroidObj[Object.keys(asteroidObj)[0]].length
-                }
+                };
+                localStorage.setItem('yesterdayInfo', JSON.stringify(f));
                 this.setState({ yesterdayInfo: f });
             });
     }
@@ -35,7 +36,8 @@ class History extends Component {
                     date: moment().subtract(2, 'days').format("MMMM Do, YYYY"),
                     allAsteroids: asteroidObj[Object.keys(asteroidObj)[0]],
                     count: asteroidObj[Object.keys(asteroidObj)[0]].length
-                }
+                };
+                localStorage.setItem('twodaysInfo', JSON.stringify(f));
                 this.setState({ twodaysInfo: f });
             });
     }
@@ -49,12 +51,18 @@ class History extends Component {
                     date: moment().subtract(3, 'days').format("MMMM Do, YYYY"),
                     allAsteroids: asteroidObj[Object.keys(asteroidObj)[0]],
                     count: asteroidObj[Object.keys(asteroidObj)[0]].length
-                }
+                };
+                localStorage.setItem('threedaysInfo', JSON.stringify(f));
                 this.setState({ threedaysInfo: f });
             });
     }
 
     componentDidMount() {
+        if (!navigator.onLine) {
+            this.setState({ yesterdayInfo: JSON.parse(localStorage.getItem('yesterdayInfo')) });
+            this.setState({ twodaysInfo: JSON.parse(localStorage.getItem('twodaysInfo')) });
+            this.setState({ threedaysInfo: JSON.parse(localStorage.getItem('threedaysInfo')) });
+        }
         this.getYesterdayInfo();
         this.getTwoDaysInfo();
         this.getThreeDaysInfo();

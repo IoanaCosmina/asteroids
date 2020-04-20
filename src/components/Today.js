@@ -10,11 +10,15 @@ class Today extends Component {
     state = { allAsteroids: [], currentAsteroids: [], currentPage: null, totalPages: null };
 
     componentDidMount() {
+        if (!navigator.onLine) {
+            this.setState({ allAsteroids: localStorage.getItem('allAsteroids') });
+        }
         let current_date = moment().format('YYYY-MM-DD');
         axios.get(`${Constants.API_URL}/feed?start_date=${current_date}&end_date=${current_date}&api_key=${Constants.API_KEY}`)
             .then(response => {
                 const asteroidObj = response.data.near_earth_objects;
                 this.setState({ allAsteroids: asteroidObj[Object.keys(asteroidObj)[0]] });
+                localStorage.setItem('allAsteroids', asteroidObj[Object.keys(asteroidObj)[0]]);
             })
             .catch(error => {
                 console.log(error);
